@@ -3,7 +3,7 @@
 [![][mavenbadge img]][mavenbadge]
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jfoenixadmin_JFoenix&metric=alert_status)](https://sonarcloud.io/dashboard?id=jfoenixadmin_JFoenix)
 [![][gitter img]][gitter]
-[![Backers on Open Collective](https://opencollective.com/JFoenix/backers/badge.svg)](#backers) 
+[![Backers on Open Collective](https://opencollective.com/JFoenix/backers/badge.svg)](#backers)
 [![GitHub forks](https://img.shields.io/github/forks/jfoenixadmin/JFoenix.svg)](https://github.com/jfoenixadmin/JFoenix/network)
 [![GitHub issues](https://img.shields.io/github/issues/jfoenixadmin/JFoenix.svg)](https://github.com/jfoenixadmin/JFoenix/issues)
 [![GitHub license](https://img.shields.io/github/license/jfoenixadmin/JFoenix.svg)](https://github.com/jfoenixadmin/JFoenix/blob/master/LICENSE)
@@ -35,8 +35,8 @@ If you like JFoenix :) and want to support this project, you can become a backer
 * <a href="https://github.com/ThijsZijdel/Corendon-LostLuggage">Corendon LostLuggage</a>
 * <a href="https://github.com/afsalashyana/Library-Assistant">Library Assistant</a>
 * <a href="https://github.com/badarshahzad/Jfx-Browser">JFX-Browser</a>
-* <a href="https://github.com/huanghongxun/HMCL">HMCL</a> - Hello Minecraft! Launcher 
-* By <a href="https://github.com/anongrp">Anongrp</a> in several projects: 
+* <a href="https://github.com/huanghongxun/HMCL">HMCL</a> - Hello Minecraft! Launcher
+* By <a href="https://github.com/anongrp">Anongrp</a> in several projects:
 <a href="https://github.com/anongrp/Phony">Phony</a>,
 <a href="https://github.com/anongrp/ThunderGet">ThunderGet</a>,
 <a href="https://github.com/anongrp/Portume">Portume</a>
@@ -93,6 +93,9 @@ You can download the source code of the library and build it as mentioned previo
 ### How to Include In Gradle Project
 ```groovy
 repositories {
+    maven{ url 'https://maven.aliyun.com/repository/public' }
+    maven{ url 'https://maven.aliyun.com/repository/google' }
+    maven{ url 'https://maven.aliyun.com/repository/gradle-plugin' }
     mavenCentral()
 }
 ```
@@ -152,31 +155,31 @@ Reference the repository from this location using:
 
 <details><summary><i>JFXListView</i></summary><p>
 
-    
+
 ![List View Demo](http://jfoenix.com/gif/listview.gif "List View Demo")
 </p></details>
 
 <details><summary><i>JFXHighlighter</i></summary><p>
 
-    
+
 ![Highlighter](http://jfoenix.com/gif/highlighter.gif "Highlighter")
 </p></details>
 
 <details><summary><i>JFXChipView</i></summary><p>
 
-    
+
 ![Chip View](http://jfoenix.com/gif/chipview.gif "Chip View")
 </p></details>
 
 <details><summary><i>JFXNodesList</i></summary><p>
 
-    
+
 ![Nodes List Demo](http://jfoenix.com/gif/nodes-list.gif "Nodes List Demo")
 </p></details>
 
 <details><summary><i>JFXMasonryPane</i></summary><p>
 
-    
+
 ![Masonry Demo](http://jfoenix.com/gif/masonry.gif "Masonry Demo")
 </p></details>
 
@@ -187,42 +190,42 @@ Reference the repository from this location using:
 
 <details><summary><i>JFXSpinner</i></summary><p>
 
-    
+
 ![Spinner Demo](http://jfoenix.com/gif/spinner.gif "Spinner Demo")
 </p></details>
 
 <details><summary><i>JFXSnackbar</i></summary><p>
 
-    
+
 ![Icons-Snackbar Demo](http://jfoenix.com/gif/icons-snackbar.gif "Icons-Snackbar Demo")
 </p></details>
 
 <details><summary><i>JFXColorPicker</i></summary><p>
 
-    
+
 ![Color Picker Demo](http://jfoenix.com/gif/colorpicker-beta.gif "Color Picker Demo")
 </p></details>
 
 <details><summary><i>JFXDatePicker</i></summary><p>
 
-    
+
 ![Date Picker Demo](http://jfoenix.com/gif/datepicker.gif "Date Picker Demo")
 </p></details>
 
 <details><summary><i>JFXTimePicker</i></summary><p>
 
-    
+
 ![Time Picker Demo](http://jfoenix.com/gif/timepicker.gif "Time Picker Demo")
 </p></details>
 
 <details><summary><i>JFXTreeTableView</i></summary><p>
 
-    
+
 ![Tree Table View](http://jfoenix.com/gif/treetableview.gif "Tree Table View")
 </p></details>
 
 <details><summary><i>Grouping</i></summary><p>
-    
+
 ![Grouping Demo](http://jfoenix.com/gif/grouping.gif "Grouping Demo")
 </p></details>
 
