@@ -1,6 +1,14 @@
 apply plugin: 'application'
 apply plugin: 'java-library'
 
+sourceSets {
+    main {
+        java {
+            exclude 'module-info.java'
+        }
+    }
+}
+
 applicationDefaultJvmArgs = ["-Dprism.order=d3d,es2,es1,sw "]
 mainClassName = 'demos.MainDemo'
 
@@ -18,4 +26,13 @@ dependencies {
     compile 'org.kordamp.ikonli:ikonli-fontawesome5-pack:2.4.0'
     compile('de.jensd:fontawesomefx:8.9')
     compile project(':jfoenix')
+
+    // JavaFX 11 dependencies
+    implementation 'org.openjfx:javafx-fxml:11.0.2:win'
+    implementation 'org.openjfx:javafx-controls:11.0.2:win'
+    implementation 'org.openjfx:javafx-graphics:11.0.2:win'
+    implementation 'org.openjfx:javafx-base:11.0.2:win'
+
+    // javax.annotation for @PostConstruct (removed in Java 11)
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
 }

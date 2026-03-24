@@ -61,7 +61,6 @@ subprojects {
             inputs.property("moduleName", moduleName)
             doFirst {
                 options.compilerArgs += [
-                    '--module-path', classpath.asPath,
                     // For various usages of TraversalEngine
                     "--add-exports=javafx.graphics/com.sun.javafx.scene=com.jfoenix",
                     "--add-exports=javafx.graphics/com.sun.javafx.scene.text=com.jfoenix",
@@ -75,22 +74,9 @@ subprojects {
                     "--add-exports=javafx.controls/com.sun.javafx.scene.control=com.jfoenix",
                     "--add-exports=javafx.controls/com.sun.javafx.scene.control.inputmap=com.jfoenix",
                     "--add-exports=javafx.base/com.sun.javafx.binding=com.jfoenix",
-                    // For ReadOnlyUnbackedObservableList across files
-//                    "--add-exports=javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED",
-                    // For InputMap used in behavior classes
-//                    "--add-exports=javafx.controls/com.sun.javafx.scene.control.inputmap=ALL-UNNAMED",
                     // For EventHandlerManager across files
-                    "--add-exports=javafx.base/com.sun.javafx.event=com.jfoenix",
-                    "--add-exports=javafx.base/com.sun.javafx.event=com.jfoenix",
-                    // For MappingChange, NonIterableChange across files
-//                    "--add-exports=javafx.base/com.sun.javafx.collections=ALL-UNNAMED",
-                    // For VersionInfo in VersionChecker
-//                    "--add-exports=javafx.base/com.sun.javafx.runtime=ALL-UNNAMED",
-                    // For WebPage in SVGLoader
-//                    "--add-exports=javafx.web/com.sun.webkit=ALL-UNNAMED"
-//                    "--add-modules=java.se.ee"
+                    "--add-exports=javafx.base/com.sun.javafx.event=com.jfoenix"
                 ]
-                classpath = files()
             }
         }
 

@@ -2,7 +2,18 @@ apply plugin: 'osgi'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'java-library'
 
-apply from: rootProject.file('gradle/license.gradle')
+sourceSets {
+    main {
+        java {
+            exclude 'module-info.java'
+            exclude 'com/jfoenix/android/**'
+        }
+    }
+}
+
+configurations {
+    pom
+}
 
 // pom file name
 ext {
@@ -10,8 +21,28 @@ ext {
     pomFilePath = "${project.projectDir}/tmp/pom.xml"
     pomFile = file(pomFilePath)
 }
-configurations {
-    pom
+
+dependencies {
+    implementation 'org.openjfx:javafx-fxml:11.0.2:win'
+    implementation 'org.openjfx:javafx-controls:11.0.2:win'
+    implementation 'org.openjfx:javafx-graphics:11.0.2:win'
+    implementation 'org.openjfx:javafx-base:11.0.2:win'
+}
+
+compileJava {
+    options.compilerArgs = [
+        '--add-exports', 'javafx.graphics/com.sun.javafx.scene=com.jfoenix',
+        '--add-exports', 'javafx.graphics/com.sun.javafx.scene.text=com.jfoenix',
+        '--add-exports', 'javafx.graphics/com.sun.javafx.geom=com.jfoenix',
+        '--add-exports', 'javafx.graphics/com.sun.javafx.stage=com.jfoenix',
+        '--add-exports', 'javafx.graphics/com.sun.javafx.util=com.jfoenix',
+        '--add-exports', 'javafx.graphics/com.sun.javafx.scene.traversal=com.jfoenix',
+        '--add-exports', 'javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix',
+        '--add-exports', 'javafx.controls/com.sun.javafx.scene.control=com.jfoenix',
+        '--add-exports', 'javafx.controls/com.sun.javafx.scene.control.inputmap=com.jfoenix',
+        '--add-exports', 'javafx.base/com.sun.javafx.binding=com.jfoenix',
+        '--add-exports', 'javafx.base/com.sun.javafx.event=com.jfoenix'
+    ]
 }
 
 task sourcesJar(type: Jar) {
@@ -31,8 +62,8 @@ javadoc {
     options.version = true
     options.windowTitle = "$project.name $project.version API"
     options.docTitle = "$project.name $project.version API"
-    options.links = ['http://docs.oracle.com/javase/9/docs/api/',
-                     'http://docs.oracle.com/javase/9/javafx/api/']
+    options.links = ['http://docs.oracle.com/javase/11/docs/api/',
+                     'http://docs.oracle.com/javase/11/javafx/api/']
 }
 
 task myJavadocs(type: Javadoc) {
@@ -78,7 +109,7 @@ jar {
 
     manifest {
         name = 'JFoenix'
-        instruction 'Bundle-RequiredExecutionEnvironment', 'JavaSE-9'
+        instruction 'Bundle-RequiredExecutionEnvironment', 'JavaSE-11'
         instruction 'Bundle-Description', 'JavaFX Material Design Library'
         instruction 'Import-Package', '!com.sun.*,!javafx.*, *'
         instruction 'Export-Package', '!com.jfoenix.android.*, *'
