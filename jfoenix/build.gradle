@@ -16,6 +16,7 @@ configurations {
 dependencies {
     dalvikSDK 'org.javafxports:dalvik-sdk:8.60.9@zip'
     compile fileTree(dir: "$buildDir/dalvik-sdk/rt/lib/ext/jfxrt.jar", include: 'jfxrt.jar')
+    compile('de.jensd:fontawesomefx:8.9')
 }
 task extractDalvik(type: Copy) {
     from { configurations.dalvikSDK.collect { zipTree(it) } }
@@ -32,7 +33,7 @@ task sourcesJar(type: Jar) {
 }
 
 task retroSourcesJar(type: Jar) {
-    String str = sourceSets.main.output.classesDir;
+    String str = sourceSets.main.output.classesDir
     sourceSets.main.output.classesDir = "$buildDir/retrolambda/main"
     group 'Build'
     description 'JFoenix compiled using retro-lambda'
